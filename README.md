@@ -17,3 +17,11 @@ Quickly surface answers from Shopify's help center using GPT.
 
 ## Why?
 Created this as a research experiment in order to learn OpenAI embeddings + Pinecone. Added bonus was to have a way to quickly surface answers for my Shopify platform questions.
+
+## How to optimize this further
+- Split article text into smaller documents to decrease cost of token usage. Split by H2/section. 
+- Test different models to see one cost. Curie is 10x cheaper than Davinci.
+- Search documents with a normal search engine (Algolia) and pass that document into open AI rather than using embedding’s and Pinecone.
+- Cache results for common queries.
+- Test a shorter prompt to further save tokens.
+
