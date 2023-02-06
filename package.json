@@ -1,7 +1,9 @@
 {
   "name": "dev-docs-chat",
-  "version": "0.1.0",
-  "private": true,
+  "author": {
+    "name": "Gil Greenberg"
+  },
+  "version": "1.0.0",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
