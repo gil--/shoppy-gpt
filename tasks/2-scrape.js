@@ -1,3 +1,4 @@
+import fs from "fs";
 import scrapingbee from "scrapingbee";
 import { MongoClient } from "mongodb";
 import * as dotenv from "dotenv";
@@ -6,7 +7,11 @@ dotenv.config();
 // Count of scraped urls
 let count = 0;
 
-if (!process.env.SCRAPING_BEE_API_KEY || !process.env.MONGODB_URI || !process.env.MONGODB_DB) {
+if (
+  !process.env.SCRAPING_BEE_API_KEY ||
+  !process.env.MONGODB_URI ||
+  !process.env.MONGODB_DB
+) {
   throw new Error("Missing Environment Variables");
 }
 
@@ -15,10 +20,10 @@ const scrapingBee = new scrapingbee.ScrapingBeeClient(
   process.env.SCRAPING_BEE_API_KEY
 );
 
-// Demo sitemap urls
-const sitemapUrls = [
-  "https://help.shopify.com/en/manual/orders/self-serve-returns",
-];
+// Read in JSON file of array of sitemap urls
+const sitemapUrls = JSON.parse(fs.readFileSync("./sitemap.json", "utf8"));
+console.log("sitemapUrls", sitemapUrls);
+process.exit();
 
 // Connect to Mongodb
 const client = new MongoClient(process.env.MONGODB_URI, {
@@ -62,9 +67,11 @@ const scrapeUrlsAndSaveToMongo = async () => {
       locale: "en",
     });
     count++;
-    console.log(`${count}/${sitemapUrls.length} Scraped and inserted ${url} into Mongodb.`);
+    console.log(
+      `${count}/${sitemapUrls.length} Scraped and inserted ${url} into Mongodb.`
+    );
   }
-  process.exit() 
+  process.exit();
 };
 
 scrapeUrlsAndSaveToMongo();

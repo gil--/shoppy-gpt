@@ -1,0 +1,16 @@
+{
+  "name": "scripts",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "cross-fetch": "^3.1.5",
+    "dotenv": "^16.0.3",
+    "eslint": "8.32.0",
+    "eslint-config-next": "13.1.2",
+    "mongodb": "^5.0.0",
+    "openai": "^3.1.0",
+    "pinecone-client": "^1.0.1",
+    "scrapingbee": "^1.6.1"
+  }
+}
