@@ -10,10 +10,20 @@
   },
   "dependencies": {
     "@next/font": "13.1.2",
+    "@shopify/polaris": "^10.21.0",
+    "@shopify/polaris-icons": "^6.10.0",
+    "@uiw/react-codemirror": "^4.19.7",
+    "codemirror-graphql": "^2.0.3",
+    "cross-fetch": "^3.1.5",
+    "dotenv": "^16.0.3",
     "eslint": "8.32.0",
     "eslint-config-next": "13.1.2",
+    "mongodb": "^5.0.0",
     "next": "13.1.2",
+    "openai": "^3.1.0",
+    "pinecone-client": "^1.0.1",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "scrapingbee": "^1.6.1"
   }
 }
