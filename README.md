@@ -25,3 +25,6 @@ Created this as a research experiment in order to learn OpenAI embeddings + Pine
 - Cache results for common queries.
 - Test a shorter prompt to further save tokens.
 
+## Preview
+![preview.png](./preview.png)
+
