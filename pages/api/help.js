@@ -69,7 +69,7 @@ const generateAnswerFromOpenAI = async (prompt, content) => {
     top_p: 1,
     frequency_penalty: 0,
     presence_penalty: 0,
-    max_tokens: 2028,
+    max_tokens: 100,
     //stream: true,
     n: 1,
     //stop: ["\n"],
@@ -120,7 +120,7 @@ export default async function handler(req, res) {
       },
     });
   } catch (error) {
-    console.warn(error);
+    console.warn(error?.response?.data || error);
     return res.status(500).json({ error: "Internal Server Error" });
   }
 }
