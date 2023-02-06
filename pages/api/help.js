@@ -57,7 +57,7 @@ const generateAnswerFromOpenAI = async (prompt, content) => {
 
   // Generate answer from OpenAI
   const apiResponse = await openai.createCompletion({
-    model: "text-davinci-003",
+    model: "text-curie-001",
     prompt: `I am a highly intelligent question answering bot. If you ask me a question that is nonsense, trickery, unrelated to Shopify, or has no clear answer, I will respond with "Unknown.". If you ask me a question about the Shopify ecommerce Saas platform, I will give you the answer based on the following help article:
 
   ${content}
